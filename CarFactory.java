@@ -1,8 +1,13 @@
 public interface CarFactory {
-    Color createColor();
-    Marca createMarca();
-    Placa createPlaca();/*
+    Color createColor(String color);
+    Marca createMarca(String marca);
+    Placa createPlaca(String placa);
+    String getColor();
+    String getMarca();
+    String getPlaca();
+    /*
     Cilindraje createCilindraje();
     Trasmision createTramision();
-    NroPuestos createNroPuesto();*/
+    NroPuestos createNroPuesto();
+    */
 }

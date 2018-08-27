@@ -1,27 +1,39 @@
 public class FamiliarFactory implements CarFactory {
 
-    String color;
-    String marca;
-    String placa;
+    private Color color;
+    private Marca marca;
+    private Placa placa;
 
     public FamiliarFactory(String color,String marca,String placa){
-        this.color = color;
-        this.marca= marca;
-        this.placa = placa;
+        this.color = createColor(color);
+        this.marca = createMarca(marca);
+        this.placa = createPlaca(placa);
     }
 
-    public Color createColor() {
+    public Color createColor(String color) {
         return new FamiliarColor(color);
     }
 
-    public Marca createMarca() {
+    public Marca createMarca(String marca) {
         return new FamiliarMarca(marca);
      }
 
      
-    public Placa createPlaca() {
+    public Placa createPlaca(String placa) {
         return new FamiliarPlaca(placa);
      }
+
+    public String getColor() {
+        return color.getColor();
+    }
+
+    public String getMarca() {
+        return marca.getMarca();
+    }
+    
+    public String getPlaca() {
+        return placa.getPlaca();
+    }
 /* 
     public Cilindraje createCilindraje() {
         return new FamiliarCilindraje();

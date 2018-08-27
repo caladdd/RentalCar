@@ -1,12 +1,10 @@
 public class AppRentalCar {
-
+/* 
     private Color color;
     private Placa placa;
     private Marca marca;
-  
-    /**
-     * Creates kingdom
-     */
+
+   
     public void createCar(final CarFactory factory) {
       setColor(factory.createColor());
       setMarca(factory.createMarca());
@@ -48,49 +46,6 @@ public class AppRentalCar {
     private void setPlaca(final Placa placa) {
       this.placa = placa;
     }
+ */  
   
-    /**
-     * The factory of kingdom factories.
-     */
-    public static class FactoryMaker {
-  
-      /**
-       * Enumeration for the different types of Kingdoms.
-       */
-      /**
-       * The factory method to create CarFactory concrete objects.
-       */
-      public static CarFactory makeFactory(String color, String marca, String placa, int type) {
-        switch (type) {
-          case 1:
-            return new FamiliarFactory(color, marca, placa);
-          case 2:
-            return new FamiliarFactory(color, marca, placa);
-            //return new OrcCarFactory();
-          default:
-            throw new IllegalArgumentException("KingdomType not supported.");
-        }
-      }
-    }
-  
-    /**
-     * Program entry point.
-     * 
-     * @param args
-     *          command line args
-     */
-    public static void main(String[] args) {
-  
-      AppRentalCar app = new AppRentalCar();
-  
-      //LOGGER.info("Elf Kingdom");
-      app.createCar(FactoryMaker.makeFactory("rojo","bmw","qwe",1));
-      app.getPlaca().print();
-      app.getMarca().print();
-      app.getColor().print();
-      app.createCar(FactoryMaker.makeFactory("azul","bmw","qwe",2));
-      app.getPlaca().print();
-      app.getMarca().print();
-      app.getColor().print();
-    }
   }
