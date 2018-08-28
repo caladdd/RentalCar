@@ -40,14 +40,29 @@ public class AppRentalCar {
 
         Stack<CarFactory>[] carros = Generador.generadorCar(1, 5);
         Customer[] customer = Generador.generadorCustomer(5);
-        int n = 0, m = 0;
+        int n , m = 0;
         System.out.println(carros[0].size());
         RentalTransation r;
+        System.out.print(carros.length);
         while(cantidadAutos != 0){
-            System.out.print("Customer: ");
+            System.out.print("Ingrese Id de Customer: ");
             n = sc.nextInt();
-            System.out.print("Carro: ");
+            while(n<1 || n>customer.length){
+                System.out.print("Id de Customer invalido, intente de nuevo: ");
+                n = sc.nextInt();
+            }
+
+            System.out.print("Ingrese tipo de Carro: ");
             m = sc.nextInt();
+            while(m<1 || m>carros.length){
+                System.out.print("Tipo de auto invalido, intente de nuevo: ");
+                m = sc.nextInt();
+                if(m>0 && m<=carros.length)
+                while(carros[m-1].empty()){
+                    System.out.print("Tipo de auto no disponible, intente de nuevo: ");
+                    m = sc.nextInt();
+                }
+            }
             r = new RentalTransation(idRenta, "fecha", customer[n-1], carros[m-1].pop());
             cantidadAutos--;
         }
