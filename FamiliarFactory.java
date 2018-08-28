@@ -5,6 +5,7 @@ public class FamiliarFactory implements CarFactory {
     private Color color;
     private Marca marca;
     private Placa placa;
+    private String tipo = "Familiar";
 
     public FamiliarFactory(String color,String marca,String placa){
         this.color = createColor(color);
@@ -35,6 +36,10 @@ public class FamiliarFactory implements CarFactory {
     
     public String getPlaca() {
         return placa.getPlaca();
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 /* 
     public Cilindraje createCilindraje() {

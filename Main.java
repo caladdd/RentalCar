@@ -9,7 +9,7 @@ public class Main{
      *          command line args
      */
     public static void main(String[] args) {
-
-        AppRentalCar rentalCar = AppRentalCar.getInstance();
+        //cantidad customers, autos, tipos de autos
+        AppRentalCar rentalCar = AppRentalCar.getInstance(5, 5, 1);
     }
 }

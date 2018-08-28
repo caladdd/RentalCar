@@ -7,6 +7,7 @@ public interface CarFactory {
     String getColor();
     String getMarca();
     String getPlaca();
+    String getTipo();
     /*
     Cilindraje createCilindraje();
     Trasmision createTramision();
