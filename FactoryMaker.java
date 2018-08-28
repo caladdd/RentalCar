@@ -1,3 +1,5 @@
+
+import familiar.*;
 /**
      * The factory of kingdom factories.
      */
@@ -12,9 +14,9 @@
         public static CarFactory makeFactory(String color, String marca, String placa, int type) {
             
           switch (type) {
-            case 1:
+            case 0:
               return new FamiliarFactory(color, marca, placa);
-            case 2:
+            case 1:
               return new FamiliarFactory(color, marca, placa);
               //return new OrcCarFactory();
             default:

@@ -1,3 +1,5 @@
+import carro.*;
+
 public interface CarFactory {
     Color createColor(String color);
     Marca createMarca(String marca);

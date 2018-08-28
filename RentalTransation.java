@@ -10,14 +10,15 @@ public class RentalTransation{
         this.fecha = fecha;
         this.customer = customer;
         this.car = car;
+        print();
     }
 
-    private print(){
+    private void print(){
         System.out.println("Numero de orden "+id);
         System.out.println("Fecha "+fecha);
-        System.out.println("Cliente "+customer.getNombre);
-        System.out.println("Tipo de auto rentado "+car.getMarca);
-        System.out.println("Color de auto rentado "+car.getColor);
+        System.out.println("Cliente "+customer.getNombre());
+        System.out.println("Tipo de auto rentado "+car.getMarca());
+        System.out.println("Color de auto rentado "+car.getColor());
     }
 
 }

@@ -1,51 +1,56 @@
-public class AppRentalCar {
-/* 
-    private Color color;
-    private Placa placa;
-    private Marca marca;
+import java.util.Stack;
+import java.util.Scanner;
 
-   
-    public void createCar(final CarFactory factory) {
-      setColor(factory.createColor());
-      setMarca(factory.createMarca());
-      setPlaca(factory.createPlaca());
+public class AppRentalCar {
+    private static AppRentalCar instance = null;
+    private int idRenta;
+
+    private AppRentalCar() {
+        this.idRenta=0;
+        rentalTransation();
     }
     
-    Color getColor(final CarFactory factory) {
-      return factory.createColor();
+    public static AppRentalCar getInstance() {
+        if (instance == null)
+            instance = new AppRentalCar();
+        return instance;
     }
-  
-    public Color getColor() {
-      return color;
+
+    private void rentalTransation(){
+        Scanner sc = new Scanner(System.in);
+        /* int tiposCarros = 2;
+        Stack<CarFactory> [] pila = new Stack[tiposCarros]; 
+        // Fill it with ten new Stack objects
+        for (int i=0; i<tiposCarros; ++i){
+            pila[i] = new Stack<CarFactory>();
+        }
+        CarFactory c = FactoryMaker.makeFactory("rojo","xD","asd",1);
+        CarFactory d = FactoryMaker.makeFactory("verde","rt","wsa",1);
+        pila[0].push(c);
+        pila[0].push(d); */
+        //System.out.println(c.getPlaca());
+        //System.out.println(pila[0].pop().getPlaca());
+        //System.out.println(d.getPlaca());
+        int cantidadAutos = 5;
+        /* Customer customer = new Customer(123, "juan");
+        for (int i = 0; i < 2; i++) {
+            RentalTransation r = new RentalTransation(idRenta, "fecha", customer, pila[0].pop());
+            idRenta++;
+        } */
+
+        Stack<CarFactory>[] carros = Generador.generadorCar(1, 5);
+        Customer[] customer = Generador.generadorCustomer(5);
+        int n = 0, m = 0;
+        System.out.println(carros[0].size());
+        RentalTransation r;
+        while(cantidadAutos != 0){
+            System.out.print("Customer: ");
+            n = sc.nextInt();
+            System.out.print("Carro: ");
+            m = sc.nextInt();
+            r = new RentalTransation(idRenta, "fecha", customer[n-1], carros[m-1].pop());
+            cantidadAutos--;
+        }
     }
-  
-    private void setColor(final Color color) {
-      this.color = color;
-    }
-    
-    Marca getMarca(final CarFactory factory) {
-      return factory.createMarca();
-    }
-  
-    public Marca getMarca() {
-      return marca;
-    }
-  
-    private void setMarca(final Marca marca) {
-      this.marca = marca;
-    }
-    
-    Placa getPlaca(final CarFactory factory) {
-      return factory.createPlaca();
-    }
-  
-    public Placa getPlaca() {
-      return placa;
-    }
-  
-    private void setPlaca(final Placa placa) {
-      this.placa = placa;
-    }
- */  
-  
-  }
+
+}
